@@ -1,2 +1,2 @@
 # Fandi-Sun-Thesis
-Matlab code for Adaptive Milstein with and without Jump process.
+MATLAB code for Adaptive Milstein with and without Jump process.
