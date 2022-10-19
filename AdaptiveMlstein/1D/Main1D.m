@@ -188,7 +188,7 @@ for m=1:hmaxListLength  % run through the list of hmax
         N=floor(parms.T/parms.dtuse); 
         parms.dtlast=parms.T-parms.dtuse*N;
         for k=1:N
-            W=sum(WKEEP(i,(k-1)*n+1:k*n));
+            W=randn*sqrt(parms.dtuse);
             XTMil=schemeTMil(parms, XTMil, W, 'fixed');
         end   
         if parms.dtlast ~= 0
