@@ -187,8 +187,9 @@ for m=1:hmaxListLength  % run through the list of hmax
         parms.dtuse=hmean(m); 
         N=floor(parms.T/parms.dtuse); 
         parms.dtlast=parms.T-parms.dtuse*N;
+        sqrtdtuse=sqrt(parms.dtuse);
         for k=1:N
-            W=randn*sqrt(parms.dtuse);
+            W=randn*sqrtdtuse;
             XTMil=schemeTMil(parms, XTMil, W, 'fixed');
         end   
         if parms.dtlast ~= 0
@@ -205,8 +206,9 @@ for m=1:hmaxListLength  % run through the list of hmax
         parms.dtuse=hmean(m); 
         N=floor(parms.T/parms.dtuse); 
         parms.dtlast=parms.T-parms.dtuse*N;
+        sqrtdtuse=sqrt(parms.dtuse);
         for k=1:N
-            W=randn*sqrt(parms.dtuse);
+            W=randn*sqrtdtuse;
             XPMil=schemePMil(parms, XPMil, W, parms.dtuse);
         end 
         if parms.dtlast ~= 0
@@ -222,8 +224,9 @@ for m=1:hmaxListLength  % run through the list of hmax
         parms.dtuse=hmean(m); 
         N=floor(parms.T/parms.dtuse); 
         parms.dtlast=parms.T-parms.dtuse*N;
+        sqrtdtuse=sqrt(parms.dtuse);
         for k=1:N
-            W=randn*sqrt(parms.dtuse);
+            W=randn*sqrtdtuse;
             XSSBM=schemeSSBM(parms, XSSBM, W, 'fixed', funcCubicDrift);
         end   
         if parms.dtlast ~= 0
