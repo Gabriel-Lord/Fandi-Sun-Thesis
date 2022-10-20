@@ -244,10 +244,8 @@ for m=1:hmaxListLength  % run through the list of hmax
             W=randn*sqrtdtuse;
             XTSRK=schemeTSRK(parms, XTSRK, W, 'fixed');
         end   
-        if parms.dtlast ~= 0       
-            input=XTSRK;
-            sqrtdtlast=sqrt(parms.dtlast);
-            W=randn*sqrtdtlast;
+        if parms.dtlast ~= 0      
+            W=randn*sqrt(parms.dtlast);
             XTSRK=schemeTSRK(parms, XTSRK, W, 'fixed');
         end
         TimeTSRK(m)=TimeTSRK(m)+toc; 
