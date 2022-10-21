@@ -4,9 +4,9 @@ function outcome=AMilCoreH(input,parms)
 % Outcome needs to be bounded by
 %           hmin and hmax outside the function
 % % INPUTS:
-% % 'input' -- (scaler) initial value 
+% % 'input' -- (2-by-1 vector) initial value vector  
 % % 'parms' -- (object) parameter list from 'ModelParameters.m' with updates from
 % %           main scripts
 % % OUTPUTS:
 % % 'outcome' -- (scalar)  of adaptive step h
-outcome=parms.hmax/abs(input)^(1/parms.kappa);
+outcome=parms.hmax/norm(input)^(1/parms.kappa);

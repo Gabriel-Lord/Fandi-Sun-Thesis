@@ -38,8 +38,6 @@ DIFF=@(u) DIFFCons*realsqrt(u)^3;
 DDIFFCons = DIFFCons*3/2;  % 554.5268
 DDIFF = @(u) DDIFFCons*realsqrt(u); 
 
-
-
 % parameter for PMil
 alpha=0.5;
 

@@ -1,5 +1,15 @@
 function outcome=schemeSSBM(parms, StartValue, Winc, dtType, funcCubicDrift)
 %  fixed-step Split-Step Backward Milstein
+% % INPUTS:
+% % 'parms' -- (object) parameter list from 'ModelParameters.m' with updates from
+% %           main scripts
+% % 'StartValue' -- (scalar) initial value of the process for this step
+% % 'Winc' -- (scalar  Wiener increment from the reference solution for this step  
+% % 'dtType' -- (string) type of step, either 'fixed' or 'last'
+% % 'funcCubicDrift' -- function name needed for solving drift
+% % OUTPUTS:
+% % 'outcome' -- (scalar) terminal value of the process for this step
+
 if strcmp('fixed',dtType)  
     dt=parms.dtuse;
 else  % last step

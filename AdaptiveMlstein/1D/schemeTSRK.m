@@ -1,5 +1,13 @@
 function outcome=schemeTSRK(parms, StartValue, Winc, dtType)
 % fixed-step Tamed Stochastic Runge-Kutta of order 1.0
+% % INPUTS:
+% % 'parms' -- (object) parameter list from 'ModelParameters.m' with updates from
+% %           main scripts
+% % 'StartValue' -- (scalar) initial value of the process for this step
+% % 'Winc' -- (scalar)  Wiener increment from the reference solution for this step  
+% % 'dtType' -- (string) type of step, either 'fixed' or 'last'
+% % OUTPUTS:
+% % 'outcome' -- (scalar) terminal value of the process for this step
 
 if strcmp('fixed',dtType)
     dt=parms.dtuse;
