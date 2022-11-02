@@ -321,7 +321,7 @@ fprintf('%d minutes and %f seconds\n', floor(tEnd/60), rem(tEnd,60));
 
 
 %%   generating plots
-figure(1)  % convergence plot
+figure(1)  % efficiency plot
 loglog(TimeAMilMean,RMSerrAMil,'k-o','LineWidth',3,'MarkerSize',17), hold on
 loglog(TimePMilMean,RMSerrPMil,'b:+','LineWidth',3,'MarkerSize',17), hold on
 loglog(TimeSSBMMean,RMSerrSSBM,':x','LineWidth',3,'MarkerSize',17,'Color',[0.9290, 0.6940, 0.1250]), hold on
@@ -336,7 +336,7 @@ axis tight
 grid
 
 
-figure(2)  % efficiency plot
+figure(2)  % convergence plot
 loglog(hmean,RMSerrAMil,'k-o','LineWidth',3,'MarkerSize',17), hold on
 loglog(hmean,RMSerrPMil,'b:+', 'LineWidth',3,'MarkerSize',17), hold on
 loglog(hmean,RMSerrSSBM,':x','LineWidth',3,'MarkerSize',17,'Color',[0.9290, 0.6940, 0.1250]), hold on
