@@ -14,11 +14,12 @@
 %     3. linear jump amplitude in 'AMPLTD.m'
 clc;clear all; close all;
 
-% initial value
-Xzero=5;
-
 % list of model parameters called from 'ModelParameters.m'
 parms=ModelParameters;
+ 
+% initial value
+Xzero=5;
+parms.rank=1;
 
 % parameter for controlling the adaptive step
 % could be bigger when e.g. intial value is big
