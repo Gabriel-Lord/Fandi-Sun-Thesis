@@ -12,8 +12,8 @@ function [JumpTimes, zeta]=JumpInfo(parms)
 % % 'zeta' -- (M-by-n matrix) each row contains
 % %           jump sizes occurred at their corresponding
 % %           jump times in one MC realisation
-
-zeta1=0; zeta2=0; pi=zeros(parms.M,1);
+ 
+zeta=zeros(parms.rank*parms.M,1); pi=zeros(parms.M,1);
 % run through each MC realisation
 for i=1:parms.M
     k=0; tau=0;
@@ -31,7 +31,7 @@ for i=1:parms.M
         end
         pi(i,k)=piTemp;
         % generate jump size using Standard Normal distribution
-        zeta(i,k)=randn;
+        zeta(parms.rank*i-(parms.rank-1):parms.rank*i, k)=randn(parms.rank,1);
         tau=tau+piTemp;
     end
 end
