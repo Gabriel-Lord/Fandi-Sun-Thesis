@@ -2,7 +2,7 @@ function outcome=AMPLTD(JumpSize,u)
 % % to generate jump amplitude
 % % INPUTS:  
 % % 'JumpSize' -- (scalar)   
-% % 'u' -- (scalar)  input scheme value  
+% % 'u' -- (scalar or vector)  input scheme value  
 % % OUTPUTS:
-% % 'outcome' -- (scalar) jump amplitude
-outcome=JumpSize*u;
+% % 'outcome' -- (scalar or vector) jump amplitude
+outcome=JumpSize.*u;
