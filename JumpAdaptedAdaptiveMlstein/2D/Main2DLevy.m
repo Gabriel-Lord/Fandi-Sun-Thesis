@@ -153,7 +153,9 @@ for m=1:hmaxListLength  % run through the list of hmax
     end
     
     % the averaged adaptive steps
-    hmean(m)=hfix/j;
+    % hmean(m)=hfix/j; % old method, abandoned
+    % new method, removed all jump points inherited from adapative mesh
+    hmean(m)=hfix/(j-length(nonzeros(parms.JumpTimes))+M); 
     % fixed stepsize to use 
     Dt=hmean(m);
     % generate the superposition of uniform reference steps and jump times
