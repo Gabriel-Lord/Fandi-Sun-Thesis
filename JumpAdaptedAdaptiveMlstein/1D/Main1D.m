@@ -113,7 +113,9 @@ for m=1:hmaxListLength % go through hmaxlist list
     end
     
     % the averaged adaptive steps
-    hmean(m)=hfix/j;
+    % hmean(m)=hfix/j; % old method, abandoned
+    % new method, removed all jump points inherited from adapative mesh
+    hmean(m)=hfix/(j-length(nonzeros(parms.JumpTimes))+M); 
     % the max number of hmean that T can take as a whole
     hmeanMultiple=floor(T/hmean(m));
     % uniform mesh points
